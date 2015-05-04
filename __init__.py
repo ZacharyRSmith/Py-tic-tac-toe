@@ -1,1 +1,3 @@
-print "This init file is currently empty."
+from game import *
+
+Game()

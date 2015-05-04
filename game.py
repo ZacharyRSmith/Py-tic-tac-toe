@@ -1,6 +1,5 @@
 from line   import *
 from square import *
-from turn   import *
 
 class Game(object):
     def __init__(self):
@@ -10,7 +9,7 @@ class Game(object):
         #
         # Until turn_counter == end or victory, turn
 
-    def add_rltn(self, line, sqr):
+    def add_relation(self, line, sqr):
         pass
 
     def check_victory(self):

@@ -1,2 +1,4 @@
 class Square(object):
-    pass
+    def __init__(self):
+        self.lines = []
+        self.mark  = None
