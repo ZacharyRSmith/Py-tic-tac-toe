@@ -10,6 +10,9 @@ class Game(object):
         #
         # Until turn_counter == end or victory, turn
 
+    def add_rltn(self, line, sqr):
+        pass
+
     def check_victory(self):
         pass
 
