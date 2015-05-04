@@ -1,0 +1,1 @@
+print "This init file is currently empty."
