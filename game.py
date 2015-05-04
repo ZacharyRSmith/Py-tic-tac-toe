@@ -3,14 +3,33 @@ from square import *
 
 class Game(object):
     def __init__(self):
-        print "Initializing Game object..."
         self.crnt_plyr = "X"
-        # Make squares and lines and relationships
-        #
+
+        self.squares = []
+        for i in range(3):
+            self.squares.append([])
+            for j in range(3):
+                self.squares[i].append(Square())
+
+        # Make relationships for non-diagonal lines:
+        for i in range(3):
+            for j in range(3):
+                vertical_line   = Line()
+                horizontal_line = Line()
+                self.add_relation(vertical_line,   self.squares[i][j])
+                self.add_relation(horizontal_line, self.squares[j][i])
+        # Make relationships for diagonal lines
+        diagonal_line_top_left  = Line()
+        diagonal_line_top_right = Line()
+        for i in range(3):
+            self.add_relation(diagonal_line_top_left,  self.squares[i][2 - i])
+            self.add_relation(diagonal_line_top_right, self.squares[i][i])
+
         # Until turn_counter == end or victory, turn
 
     def add_relation(self, line, sqr):
-        pass
+        line.squares.append(sqr)
+        sqr.lines.append(line)
 
     def check_victory(self):
         pass
