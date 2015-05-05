@@ -1,3 +1,5 @@
+# To run these tests, first comment out self.start() at the end of 'Game.__init__'
+
 from game   import *
 from line   import *
 from square import *
