@@ -36,9 +36,6 @@ class Game(object):
 
         return grid
 
-    def check_square(self, sqr):
-        pass
-
     def check_victory(self):
         pass
 
