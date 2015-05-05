@@ -1,4 +1,5 @@
 # To run these tests, first comment out self.start() at the end of 'Game.__init__'
+# You might also have to change your PYTHONPATH
 
 from game   import *
 from line   import *
@@ -6,7 +7,8 @@ from square import *
 
 def assert_equal(arg1, arg2):
     if arg1 == arg2:
-        print "T"
+        pass
+#         print "T"
     else: # arg1 != arg2
         print "FALSE"
 
