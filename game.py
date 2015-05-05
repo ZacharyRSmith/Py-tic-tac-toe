@@ -13,9 +13,9 @@ class Game(object):
 
         # Make relationships for non-diagonal lines:
         for i in range(3):
+            vertical_line   = Line()
+            horizontal_line = Line()
             for j in range(3):
-                vertical_line   = Line()
-                horizontal_line = Line()
                 self.add_relation(vertical_line,   self.squares[i][j])
                 self.add_relation(horizontal_line, self.squares[j][i])
         # Make relationships for diagonal lines

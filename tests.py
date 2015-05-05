@@ -31,10 +31,16 @@ assert_equal(isinstance(game.squares[0], list), True)
 assert_equal(isinstance(game.squares[0], Square), False)
 assert_equal(isinstance(game.squares[0][1], Square), True)
 
-print "Test Game.squares' line length:"
+print "Test Game.squares' line length and lines' length:"
 for sqr in all_squares['corner_squares']:
     assert_equal(len(sqr.lines), 3)
+    for line in sqr.lines:
+        assert_equal(len(line.squares), 3)
 for sqr in all_squares['center_square_ary']:
     assert_equal(len(sqr.lines), 4)
+    for line in sqr.lines:
+        assert_equal(len(line.squares), 3)
 for sqr in all_squares['other_squares']:
     assert_equal(len(sqr.lines), 2)
+    for line in sqr.lines:
+        assert_equal(len(line.squares), 3)
