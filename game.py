@@ -6,6 +6,8 @@ class Game(object):
     def __init__(self):
         self.crnt_plyr = "X"
         self.squares = self.build_grid()
+        self.victory = False
+
         self.start()
 
     def add_relation(self, line, sqr):
@@ -36,8 +38,14 @@ class Game(object):
 
         return grid
 
-    def check_victory(self):
-        pass
+    def check_victory(self, sqr):
+        for line in sqr.lines:
+            if all(square.mark == self.crnt_plyr for square in line.squares):
+                self.victory = True
+                return True
+
+        return False
+
 
     def get_square(self, usr_in):
         x = convert_number(usr_in[0])
@@ -96,7 +104,12 @@ class Game(object):
             turn_counter += 1
             self.turn()
 
-        print "Game over. There are no more free squares."
+            if self.victory:
+                print "Player", self.crnt_plyr, "you lose! :P"
+                break
+
+        self.render_grid()
+        print "Game over."
 
     def switch_player(self):
         if self.crnt_plyr == "X":
@@ -108,5 +121,5 @@ class Game(object):
         self.render_grid()
         square = self.prompt_square()
         self.mark_square(square)
-        # check_victory
+        self.check_victory(square)
         self.switch_player()
