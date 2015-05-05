@@ -26,6 +26,15 @@ class Game(object):
             self.add_relation(diagonal_line_top_right, self.squares[i][i])
 
         # Until turn_counter == end or victory, turn
+        turn_counter = 0
+        # Dynamic setting of num_turns allows for different grid size.
+        num_turns    = len(self.squares) * len(self.squares)
+        while turn_counter < num_turns:
+            turn_counter += 1
+            self.turn()
+            print self.crnt_plyr
+
+        print "Game over. There are no more free squares."
 
     def add_relation(self, line, sqr):
         line.squares.append(sqr)
@@ -41,11 +50,13 @@ class Game(object):
         pass
 
     def switch_player(self):
-        pass
+        if self.crnt_plyr == "X":
+            self.crnt_plyr = "O"
+        else: # self.crnt_plyr == "O"
+            self.crnt_plyr = "X"
 
     def turn(self):
-        pass
-        # Switch player
-        # prompt_sqr
+        self.prompt_square()
         # mark_sqr
         # check_victory
+        self.switch_player()
