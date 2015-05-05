@@ -6,7 +6,7 @@ class Game(object):
     def __init__(self):
         self.crnt_plyr = "X"
         self.squares = self.build_grid()
-#         self.start()
+        self.start()
 
     def add_relation(self, line, sqr):
         line.squares.append(sqr)
@@ -74,11 +74,21 @@ class Game(object):
 
         square = self.get_square(usr_in)
 
-        if square.mark != None:
+        if square.mark != " ":
             print "That square is already marked!"
             return self.prompt_square()
 
         return self.get_square(usr_in)
+
+    def render_grid(self):
+        grid = self.squares
+        for x in range(3):
+            print grid[x][0].mark + "|" + grid[x][1].mark + "|" + grid[x][2].mark
+
+            if x == 2:
+                break
+
+            print "-----"
 
     def start(self):
         # Until turn_counter == end or victory, turn
@@ -98,6 +108,7 @@ class Game(object):
             self.crnt_plyr = "X"
 
     def turn(self):
+        self.render_grid()
         square = self.prompt_square()
         self.mark_square(square)
         # check_victory
