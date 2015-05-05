@@ -1,5 +1,6 @@
 # Py-tic-tac-toe
-Basic tic-tac-toe in Python
+Basic tic-tac-toe in Python. Tests include "tests_live", which uses input and
+expected output files to assert code's functioning.
 
 To play, run "__init__.py"
 
