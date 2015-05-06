@@ -12,6 +12,7 @@ out = p.communicate(input=f_in.read())[0].splitlines()
 # fout = open('tests/out', 'w')
 # for elt in out:
 #     print >> fout, elt
+# fout.close()
 
 # Validate by comparing the two lists' elements.
 # print "out: ", out
