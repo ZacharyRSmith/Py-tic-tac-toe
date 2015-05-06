@@ -8,9 +8,14 @@ expected   = f_expected.read().splitlines()
 p = Popen(["python", "__init__.py"], stdin=PIPE, stdout=PIPE)
 out = p.communicate(input=f_in.read())[0].splitlines()
 
+# The following three lines were to help create out_expected:
+# fout = open('tests/out', 'w')
+# for elt in out:
+#     print >> fout, elt
+
 # Validate by comparing the two lists' elements.
-print "out: ", out
-print "expected: ", expected
+# print "out: ", out
+# print "expected: ", expected
 assert len(out) == len(expected)
 for i in range(len(out)):
 #     print "out: ", out[i]

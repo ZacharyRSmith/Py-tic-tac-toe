@@ -117,12 +117,13 @@ class Game(object):
     def render_grid(self):
         grid = self.squares
         for y in range(3):
-            print grid[0][y].mark + "|" + grid[1][y].mark + "|" + grid[2][y].mark
+            print("\n\t" + grid[0][y].mark + "\t|\t" + grid[1][y].mark +
+                                                    "\t|\t" + grid[2][y].mark)
 
             if y == 2:
                 break
 
-            print "-----"
+            print("\n\t--------------------------------------")
 
     def start(self):
         # Until turn_counter == end or victory, turn
