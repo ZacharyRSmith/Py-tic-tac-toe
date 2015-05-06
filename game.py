@@ -75,7 +75,7 @@ class Game(object):
 
         num = convert_number(usr_in)
 
-        if num == None or num < 0 or num > len(self.squares):
+        if num == None or num < 0 or num > 9:
             return False
 
         return True
@@ -101,10 +101,10 @@ class Game(object):
 
     def render_grid(self):
         grid = self.squares
-        for x in range(3):
-            print grid[x][0].mark + "|" + grid[x][1].mark + "|" + grid[x][2].mark
+        for y in range(3):
+            print grid[0][y].mark + "|" + grid[1][y].mark + "|" + grid[2][y].mark
 
-            if x == 2:
+            if y == 2:
                 break
 
             print "-----"
