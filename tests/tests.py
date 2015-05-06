@@ -1,5 +1,7 @@
 # To run these tests, first comment out self.start() at the end of 'Game.__init__'
-# You might also have to change your PYTHONPATH
+
+import sys
+sys.path += ['/home/action/workspace/Py-tic-tac-toe']
 
 from game   import *
 from line   import *

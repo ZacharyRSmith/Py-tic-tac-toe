@@ -83,7 +83,7 @@ class Game(object):
             print "That square is already marked!"
             return self.prompt_square()
 
-        return self.get_square(usr_in)
+        return square
 
     def render_grid(self):
         grid = self.squares
