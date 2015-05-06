@@ -135,7 +135,7 @@ class Game(object):
             self.turn()
 
             if self.victory:
-                print "Player", self.crnt_plyr, "you lose! :P"
+                print "Player '" + self.crnt_plyr + "', you lose! :P"
                 break
 
         self.render_grid()
