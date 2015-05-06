@@ -149,6 +149,7 @@ class Game(object):
 
     def turn(self):
         self.render_grid()
+        print "Player '" + self.crnt_plyr + "', your turn!"
         square = self.prompt_square()
         self.mark_square(square)
         self.check_victory(square)
