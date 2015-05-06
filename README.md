@@ -9,7 +9,7 @@ There are two sets of tests:
     tests/tests_live.py
 
 tests.py needs the self.start() line of Game.__init__() to be commented out
-before running.
+before running. It also needs sys.path to be hard-coded in itself.
 
-tests_live.py requires PYTHONPATH to be set to Py-tic-tac-toe as the last dir.
+With tests_live.py,
 Expect an EOL error. If an AssertionError is raised, a test is not passing.
