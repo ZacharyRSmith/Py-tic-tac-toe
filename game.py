@@ -48,23 +48,37 @@ class Game(object):
 
 
     def get_square(self, usr_in):
-        x = convert_number(usr_in[0])
-        y = convert_number(usr_in[1])
-        return self.squares[x][y]
+        num = convert_number(usr_in)
 
-    def is_usr_in_no_square(self, usr_in):
-        if len(usr_in) < 2:
-            return True
+        if num == 1:
+            return self.squares[0][2]
+        elif num == 2:
+            return self.squares[1][2]
+        elif num == 3:
+            return self.squares[2][2]
+        elif num == 4:
+            return self.squares[0][1]
+        elif num == 5:
+            return self.squares[1][1]
+        elif num == 6:
+            return self.squares[2][1]
+        elif num == 7:
+            return self.squares[0][0]
+        elif num == 8:
+            return self.squares[1][0]
+        elif num == 9:
+            return self.squares[2][0]
 
-        x = convert_number(usr_in[0])
-        y = convert_number(usr_in[1])
-
-        if   x == None or x < 0 or x > len(self.squares):
-            return True
-        elif y == None or y < 0 or y > len(self.squares):
-            return True
-        else:
+    def is_usr_in_valid(self, usr_in):
+        if len(usr_in) != 1:
             return False
+
+        num = convert_number(usr_in)
+
+        if num == None or num < 0 or num > len(self.squares):
+            return False
+
+        return True
 
     def mark_square(self, sqr):
         sqr.mark = self.crnt_plyr
@@ -73,7 +87,7 @@ class Game(object):
         print "Please select your square..."
         usr_in = raw_input("> ")
 
-        if self.is_usr_in_no_square(usr_in):
+        if not self.is_usr_in_valid(usr_in):
             print "I cannot find a square matching that input."
             return self.prompt_square()
 
