@@ -7,6 +7,7 @@ class Game(object):
         self.crnt_plyr = "X"
         self.squares = self.build_grid()
         self.victory = False
+        self.display_instruct()
 
         self.start()
 
@@ -46,6 +47,20 @@ class Game(object):
 
         return False
 
+    def display_instruct(self):
+        print(
+        """
+        Welcome to Tic-Tac-Toe.
+        You will make your move known by entering a number, 0-8. The
+        number will correspond to the board position as shown below:
+                    7   |   8   |   9
+                    -----------------
+                    4   |   5   |   6
+                    -----------------
+                    1   |   2   |   3
+        Prepare yourself. Muahahaaa!! >:}} \n
+        """
+        )
 
     def get_square(self, usr_in):
         num = convert_number(usr_in)
